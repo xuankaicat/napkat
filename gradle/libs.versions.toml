@@ -1,0 +1,41 @@
+# Version catalog is a central place for you to declare and version dependencies
+# https://docs.gradle.org/current/userguide/platforms.html#sub:version-catalog
+# https://docs.gradle.org/current/userguide/platforms.html#sub::toml-dependencies-format
+
+[versions]
+agp = "8.13.2"
+kotlin = "2.3.10"
+kotlinxDatetime = "0.7.1"
+kotlinxSerializationJSON = "1.10.0"
+kotlinxCoroutines = "1.10.2"
+ktor = "3.4.0"
+springBoot = "4.0.3"
+android-minSdk = "24"
+android-compileSdk = "36"
+vanniktechMavenPublish = "0.36.0"
+
+[libraries]
+kotlinGradlePlugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+kotlinxDatetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinxDatetime" }
+kotlinxSerialization = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJSON" }
+kotlinxCoroutines = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutines" }
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-client-cio = { module = "io.ktor:ktor-client-cio", version.ref = "ktor" }
+ktor-client-mock = { module = "io.ktor:ktor-client-mock", version.ref = "ktor" }
+ktor-client-websockets = { module = "io.ktor:ktor-client-websockets", version.ref = "ktor" }
+android-gradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
+vanniktech-mavenPublish-plugin = { module = "com.vanniktech:gradle-maven-publish-plugin", version.ref = "vanniktechMavenPublish" }
+springBoot-starter = { module = "org.springframework.boot:spring-boot-starter", version.ref = "springBoot" }
+springBoot-autoconfigure = { module = "org.springframework.boot:spring-boot-autoconfigure", version.ref = "springBoot" }
+springBoot-starter-websocket = { module = "org.springframework.boot:spring-boot-starter-websocket", version.ref = "springBoot" }
+springBoot-configurationProcessor = { module = "org.springframework.boot:spring-boot-configuration-processor", version.ref = "springBoot" }
+springBoot-starter-test = { module = "org.springframework.boot:spring-boot-starter-test", version.ref = "springBoot" }
+
+# Libraries can be bundled together for easier import
+[bundles]
+kotlinxEcosystem = ["kotlinxDatetime", "kotlinxSerialization", "kotlinxCoroutines"]
+
+[plugins]
+kotlinSerialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+android-kotlin-multiplatform-library = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }
+vanniktech-mavenPublish = { id = "com.vanniktech.maven.publish", version.ref = "vanniktechMavenPublish" }

@@ -1,0 +1,1 @@
+package io.github.xuankaicat.napkat.spring.boot.starter

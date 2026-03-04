@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+io.github.xuankaicat.napkat.spring.boot.starter.config.NapcatBotAutoConfiguration
