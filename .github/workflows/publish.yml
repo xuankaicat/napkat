@@ -25,7 +25,9 @@ jobs:
         uses: gradle/actions/setup-gradle@v3
         
       - name: Publish to Maven Central
-        run: ./gradlew publishToMavenCentral --no-daemon
+        run: |
+          chmod 755 gradlew
+          ./gradlew publishToMavenCentral --no-daemon
         env:
           ORG_GRADLE_PROJECT_mavenCentralUsername: ${{ secrets.MAVEN_CENTRAL_USERNAME }}
           ORG_GRADLE_PROJECT_mavenCentralPassword: ${{ secrets.MAVEN_CENTRAL_PASSWORD }}
