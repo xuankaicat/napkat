@@ -32,6 +32,8 @@ mavenPublishing {
                 id.set(providers.gradleProperty("POM_DEVELOPER_ID"))
                 name.set(providers.gradleProperty("POM_DEVELOPER_NAME"))
                 email.set(providers.gradleProperty("POM_DEVELOPER_EMAIL"))
+                organization.set(providers.gradleProperty("POM_ORGANIZATION"))
+                organizationUrl.set(providers.gradleProperty("POM_ORGANIZATION_URL"))
             }
         }
         
